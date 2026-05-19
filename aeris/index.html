@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Workspace Inteligente</title>
+</head>
+<body>
+     <section id="workspace">
+        <h2>Workspace Inteligente - Gestor de Tareas</h2>
+        <div id="workspace-container">
+          <!-- Controles superiores -->
+          <div class="workspace-controles">
+            <button id="btn-modo-oscuro" class="btn-modo-oscuro">Modo Oscuro</button>
+          </div>
+
+          <!-- Input para agregar tareas -->
+          <div class="input-tarea-container">
+            <input 
+              type="text" 
+              id="input-tarea" 
+              class="input-tarea" 
+              placeholder="Escribe una nueva tarea..."
+            />
+            <button id="btn-agregar-tarea" class="btn-agregar-tarea">Agregar Tarea</button>
+          </div>
+
+          <!-- Filtros -->
+          <div class="filtros">
+            <button data-filtro="todas" class="activo">Todas</button>
+            <button data-filtro="pendientes">Pendientes</button>
+            <button data-filtro="completadas">Completadas</button>
+          </div>
+
+          <!-- Contadores -->
+          <div class="contadores">
+            <div class="contador">
+              <div class="numero" id="contador-completadas">0</div>
+              <div class="etiqueta">Completadas</div>
+            </div>
+            <div class="contador">
+              <div class="numero" id="contador-total">0</div>
+              <div class="etiqueta">Total</div>
+            </div>
+          </div>
+
+          <!-- Lista de tareas -->
+          <div id="lista-tareas"></div>
+        </div>
+      </section>
+      <script src="workspace.js"></script>
+</body>
+</html>

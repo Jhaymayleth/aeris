@@ -1,0 +1,399 @@
+@charset "UTF-8";
+/* ==========================================
+   WORKSPACE INTELIGENTE - Estilos
+   ========================================== */
+#workspace {
+  background: linear-gradient(135deg, #f5f3f7 0%, #e8dff5 100%);
+  padding: 60px 40px;
+  min-height: 100vh;
+}
+
+#workspace h2 {
+  text-align: center;
+  color: #1a1a2e;
+  margin-bottom: 40px;
+  font-size: 32px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#workspace-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(192, 132, 252, 0.15);
+  transition: all 0.3s ease;
+}
+#workspace-container.modo-oscuro {
+  background: #16213e;
+  color: #e2e2e2;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+#workspace-container.modo-oscuro .input-tarea {
+  background-color: #2a3f5f !important;
+  color: white !important;
+  border-color: #c084fc !important;
+}
+#workspace-container.modo-oscuro .input-tarea::-moz-placeholder {
+  color: #999;
+}
+#workspace-container.modo-oscuro .input-tarea::placeholder {
+  color: #999;
+}
+#workspace-container.modo-oscuro .btn-agregar-tarea {
+  background-color: #c084fc;
+  color: white;
+}
+#workspace-container.modo-oscuro .btn-agregar-tarea:hover {
+  background-color: #a855f7;
+}
+#workspace-container.modo-oscuro .btn-agregar-tarea.editando {
+  background-color: #10b981;
+}
+#workspace-container.modo-oscuro .btn-agregar-tarea.editando:hover {
+  background-color: #059669;
+}
+#workspace-container.modo-oscuro .filtros button {
+  background-color: #2a3f5f;
+  color: #e2e2e2;
+  border-color: #444;
+}
+#workspace-container.modo-oscuro .filtros button.activo {
+  background-color: #c084fc;
+  color: white;
+}
+#workspace-container.modo-oscuro .filtros button:hover {
+  border-color: #c084fc;
+}
+#workspace-container.modo-oscuro .tarea {
+  background-color: #2a3f5f;
+  border-color: #444;
+  color: #e2e2e2;
+}
+#workspace-container.modo-oscuro .tarea.completada p {
+  color: #999;
+}
+#workspace-container.modo-oscuro .tarea .fecha-tarea {
+  color: #aaa;
+}
+#workspace-container.modo-oscuro .sin-tareas {
+  color: #999;
+}
+#workspace-container.modo-oscuro .contador {
+  background-color: #2a3f5f;
+  color: #e2e2e2;
+  border-color: #444;
+}
+
+/* Input y botón de agregar */
+.input-tarea-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.input-tarea {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #c084fc;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: white;
+  color: #1a1a2e;
+  transition: all 0.3s ease;
+}
+.input-tarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
+  border-color: #a855f7;
+}
+.input-tarea::-moz-placeholder {
+  color: #ccc;
+}
+.input-tarea::placeholder {
+  color: #ccc;
+}
+
+.btn-agregar-tarea {
+  padding: 12px 25px;
+  background-color: #c084fc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.btn-agregar-tarea:hover {
+  background-color: #a855f7;
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.4);
+  transform: translateY(-2px);
+}
+.btn-agregar-tarea.editando {
+  background-color: #10b981;
+}
+.btn-agregar-tarea.editando:hover {
+  background-color: #059669;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+}
+
+/* Controles superiores */
+.workspace-controles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.btn-modo-oscuro {
+  padding: 8px 15px;
+  background-color: #f0f0f0;
+  border: 2px solid #c084fc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.btn-modo-oscuro:hover {
+  background-color: #c084fc;
+  color: white;
+}
+
+/* Filtros */
+.filtros {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.filtros button {
+  padding: 8px 15px;
+  border: 2px solid #ddd;
+  background-color: white;
+  color: #1a1a2e;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.filtros button:hover {
+  border-color: #c084fc;
+  color: #c084fc;
+}
+.filtros button.activo {
+  background-color: #c084fc;
+  color: white;
+  border-color: #c084fc;
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
+}
+
+/* Contadores */
+.contadores {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contadores .contador {
+  background: linear-gradient(135deg, #f5f3f7 0%, #e8dff5 100%);
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 2px solid #c084fc;
+  text-align: center;
+  min-width: 150px;
+}
+.contadores .contador .numero {
+  font-size: 28px;
+  font-weight: bold;
+  color: #c084fc;
+}
+.contadores .contador .etiqueta {
+  font-size: 12px;
+  color: #1a1a2e;
+  margin-top: 5px;
+}
+
+/* Lista de tareas */
+#lista-tareas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 200px;
+}
+
+.tarea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.tarea:hover {
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.1);
+  border-color: #c084fc;
+}
+.tarea.completada {
+  opacity: 0.7;
+  background-color: #f0f0f0;
+}
+.tarea.completada p {
+  text-decoration: line-through;
+  color: #999;
+}
+.tarea.completada .checkbox-tarea {
+  accent-color: #10b981;
+}
+
+.tarea-contenido {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+}
+
+.checkbox-tarea {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: #c084fc;
+}
+
+.tarea-texto {
+  flex: 1;
+}
+.tarea-texto p {
+  margin: 0;
+  color: #1a1a2e;
+  font-size: 16px;
+  word-break: break-word;
+}
+.tarea-texto .fecha-tarea {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #999;
+  line-height: 1.4;
+}
+
+.tarea-acciones {
+  display: flex;
+  gap: 8px;
+}
+.tarea-acciones button {
+  padding: 6px 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+.tarea-acciones button:hover {
+  background-color: rgba(192, 132, 252, 0.1);
+  transform: scale(1.1);
+}
+.tarea-acciones button.btn-eliminar:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Estado sin tareas */
+.sin-tareas {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+}
+.sin-tareas p {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Mensaje de bienvenida */
+.mensaje-bienvenida {
+  background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  animation: slideIn 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.mensaje-bienvenida p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+.mensaje-bienvenida small {
+  display: block;
+  margin-top: 5px;
+  opacity: 0.9;
+  font-size: 12px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Responsive */
+@media (max-width: 768px) {
+  #workspace {
+    padding: 40px 20px;
+  }
+  #workspace-container {
+    padding: 20px;
+  }
+  .input-tarea-container {
+    flex-direction: column;
+  }
+  .btn-agregar-tarea {
+    width: 100%;
+  }
+  .workspace-controles {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-modo-oscuro {
+    width: 100%;
+  }
+  .contadores {
+    flex-direction: column;
+  }
+  .contador {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  #workspace h2 {
+    font-size: 24px;
+  }
+  .filtros button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  .tarea {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tarea-acciones {
+    width: 100%;
+    margin-top: 10px;
+    justify-content: flex-end;
+  }
+}/*# sourceMappingURL=style.css.map */
